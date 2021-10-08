@@ -9,10 +9,12 @@
 
 #define pdSECOND pdMS_TO_TICKS(1000)
 
+#include "gpio.h"
 
 class Main final
 {
-  public:
+public:
   esp_err_t setup(void);
   void loop(void);
+  Gpio::GpioOutput led{GPIO_NUM_2, true};
 };
